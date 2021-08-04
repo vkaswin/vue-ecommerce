@@ -1,18 +1,38 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <h1>Home Page</h1>
+  <product-card v-for="(list,index) in products" :key="index" :product='list' />
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import ProductCard from '@/components/ProductCard'
+import {getAllProducts} from '@/service/Product'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    ProductCard
+  },
+  data(){
+    return{
+      products: [],
+    }
+  },
+  mounted(){
+    this.getProducts()
+  },
+  methods: {
+    async getProducts(){
+      try{
+        let response = await getAllProducts();
+        if(response.status == 200){
+          console.log(response)
+          this.products = response.data
+        }
+      }
+      catch(error){
+        console.log(error.response)
+      }
+    }
   }
 }
 </script>

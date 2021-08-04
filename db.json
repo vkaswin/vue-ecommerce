@@ -1,0 +1,24 @@
+{
+    "products": [
+        {
+            "name": "Product 1",
+            "imageUrl":[],
+            "price":1000,
+            "originalPrice":1500 
+        },
+        {
+            "name":"Product 2",
+            "imageUrl":[],
+            "price":1000,
+            "originalPrice":1500 
+        }
+    ],
+    "cart": [
+        {
+            "name": "Product 1",
+            "imageUrl":[],
+            "price":1000,
+            "originalPrice":1500 
+        }
+    ]
+}
