@@ -1,23 +1,26 @@
 <template>
   <BaseLayout>
-      <Carousel :image="banner" />
+    <div class="product-container">
+      <product-card v-for="list in products" :key="list.name" :product='list' :cart="isCart(list.id)" @addToCart="addCart"  />
+    </div>
   </BaseLayout>
 </template>
 
 <script>
+import ProductCard from '@/components/Product/ProductCard'
 import BaseLayout from '@/layout/BaseLayout'
-import Carousel from '@/components/Home/Carousel'
-import { getAllProduct, addCartProduct } from '@/service/apiService'
+import { getAllProduct, addCartProduct, getCartProduct } from '@/service/apiService'
 
 export default {
-  name: 'Home',
+  name: 'Products',
   components: {
-    BaseLayout,
-    Carousel
+    ProductCard,
+    BaseLayout
   },
   data(){
     return{
       products: [],
+      cart: [],
       banner: [
          {
            url: require("@/assets/images/banner/banner-1.jpg"),
@@ -65,10 +68,30 @@ export default {
         console.log(error.response)
       }
     },
+    async getCart(){
+      try{
+        let response = await getCartProduct();
+        if(response.status == 200){
+          this.cart = response.data
+        }
+      }
+      catch(error){
+        console.log(error.response)
+      }
+    }
   },
+  computed: {
+    isCart(){
+      return (id) => this.cart.findIndex((list)=>list.id === id) != -1 ? true : false
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-  
+  .product-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 30px 15px;
+  }
 </style>

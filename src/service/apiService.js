@@ -9,6 +9,14 @@ export const getAllProduct = async () => {
   return request;
 };
 
+export const getProductDetail = async (id) => {
+  let request = await axios({
+    method: "get",
+    url: `${endpoints.PRODUCT}/${id}`,
+  });
+  return request;
+};
+
 export const addCartProduct = async (data) => {
   let request = await axios({
     method: "post",
@@ -33,13 +41,21 @@ export const updateCartProduct = async (data) => {
   return request;
 };
 
-export const deleteCartProduct = async () => {
+export const deleteCartProduct = async (id) => {
   let request = await axios({
     method: "delete",
-    url: endpoints.CART,
+    url: `${endpoints.CART}/${id}`,
     headers: {
       "Content-Type": "application/json",
     },
+  });
+  return request;
+};
+
+export const getCartProduct = async () => {
+  let request = await axios({
+    method: "get",
+    url: endpoints.CART,
   });
   return request;
 };

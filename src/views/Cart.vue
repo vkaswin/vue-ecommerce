@@ -1,16 +1,12 @@
 <template>
-  <h1>{{product.name}}</h1>
-  <div class="product-card">
-
-  </div>
+    <h1>Cart Page</h1>
 </template>
 
 <script>
-import { addCartProduct,updateCartProduct } from '@/service/apiService'
+import { updateCartProduct, deleteCartProduct } from '@/service/apiService'
 
 export default {
-  name: 'ProductCard',
-  props: ["product"],
+  name: 'Cart',
   methods: {
     async increaseQty(data){
       let body = {
@@ -18,6 +14,15 @@ export default {
         quantity: data.quantity +1
       }
       this.updateCart(body)
+    },
+    async decreaseQty(data){
+      if(data.quantity - 1 != 0){
+        let body = {
+          id: data.id,
+          quantity: data.quantity -1
+        }
+        this.updateCart(body)
+      }
     },
     async updateCart(){
       try{
@@ -30,9 +35,9 @@ export default {
         console.log(error.response)
       }
     },
-    async addCart(){
+    async deleteCart(id){
       try{
-        let response = await addCartProduct(body);
+        let response = await deleteCartProduct(id);
         if(response.status == 200){
           console.log(response)
         }
@@ -40,13 +45,19 @@ export default {
       catch(error){
         console.log(error.response)
       }
-    }
-  }
+    },
+    price(num){
+      return Number(num).toLocaleString("en-In",{
+        maximumFractionDigits: 2,
+        style: "currency",
+        currency: "INR",
+      })
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
-.produt-card{
-  color: red;
-}
+
+
 </style>

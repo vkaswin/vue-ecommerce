@@ -1,0 +1,17 @@
+body {
+  overflow-x: hidden;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  pointer-events: all;
+  opacity: 0.7;
+}
+
+a {
+  text-decoration: none;
+}
+
+.swiper-container {
+  max-width: 100% !important;
+}
