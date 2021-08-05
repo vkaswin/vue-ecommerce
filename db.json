@@ -1,24 +1,102 @@
 {
-    "products": [
-        {
-            "name": "Product 1",
-            "imageUrl":[],
-            "price":1000,
-            "originalPrice":1500 
-        },
-        {
-            "name":"Product 2",
-            "imageUrl":[],
-            "price":1000,
-            "originalPrice":1500 
-        }
-    ],
-    "cart": [
-        {
-            "name": "Product 1",
-            "imageUrl":[],
-            "price":1000,
-            "originalPrice":1500 
-        }
-    ]
+  "product": [
+    {
+      "name": "Boat Airdopes 441",
+      "imageUrl": [
+        "https://m.media-amazon.com/images/I/51lEIy51L6L._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/61B2hgihcFL._SX522_.jpg",
+        "https://m.media-amazon.com/images/I/61wNhh88VmL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/81Pm0Il3JBL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/51IaG4B0JvL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/610sudaCDNL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/61t3rHj4OxL._SL1500_.jpg"
+      ],
+      "price": 1799,
+      "originalPrice": 2000,
+      "quantity":1,
+      "description": "Plug Into Nirvana with boAt Airdopes 441 TWS earbuds to enjoy your music in a truly wireless way. It has the IWP (Insta Wake N’ Pair) Technology, meaning as soon as one opens the charging case lid, the earbuds power on and enter connection mode. The TWS Airdopes 441 come equipped with 6mm drivers for immersive sound. It offers a seamless user experience via its capacitive touch controls. One may hit the gym or play on any field as its secure sports fit earbuds remain intact and comfortably in place. The stereo calling feature lets the user indulge in smooth and clear chats over calls. Its latest Bluetooth v5.0 offers seamless instant connectivity. With a battery capacity of 35mAh for each earbud, indulge in blissful audio experience for up to 5 hours in a go and get an additional 25H of playback with the carry cum charge case. Also, a Type C charging port ensures that the case gets to be charged without much fuss and with ease. It is IPX7 rated to offer resistance against sweat and splash scares. One can access the instant voice assistant by just a single touch. The ergonomically designed TWS Airdopes 441 are truly dope!",
+      "id":1
+    },
+    {
+      "name": "OnePlus 9R 5G",
+      "imageUrl": [
+        "https://m.media-amazon.com/images/I/61IwksZ-DGL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/6118bCOA0rL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/61Q5U3dzCKL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/612rhTtaalL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/61g+kcuvV-L._SL1500_.jpg"
+      ],
+      "price": 45000,
+      "originalPrice": 50000,
+      "quantity":1,
+      "description": "The All New OnePlus 9 R, Level Up - the New onePlus 9R comes with Qualcomm Snapdragon 870 5G with upgraded Qualcomm Kryo 585 CPU that performs intense mobile computing at up to 3.2 GHz and also comes with an ultra-fast Qualcomm Adreno 650 GPU for superb on-device experiences. The Device is loaded with a quad rear camera module that features a 48 MP Main camera, 16 MP Ultra Wide angle Camera, 5 MP Macro camera and a 2 MP Monochrome camera, it also comes with a 16 MP Front Camera. The device has a 6.55 inch Fluid AMOLED Display with 120 Hz of refresh rate and a 4500 mAh Battery with 65 W Warp Charge capability",
+      "id":2
+    },
+    {
+      "name": "Apple Watch SE",
+      "imageUrl": [
+        "https://m.media-amazon.com/images/I/71bUKrOPzYL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/81VWaPJYLeL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/81sbcUCpaSL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/81JtJg-nSPL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/813nJtL95YL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/71IC4cSI43L._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/718qNzj4k8L._SL1500_.jpg"
+      ],
+      "price": 25000,
+      "originalPrice": 30000,
+      "quantity":1,
+      "description": "LTE and UMTS, Built-in GPS, GLONASS, Galileo, and QZSS, S5 with 64-bit dual-core processor, W3 Apple wireless chip, Barometric altimeter, Capacity 32GB, Optical heart sensor, Electrical heart sensor, Improved accelerometer up to 32 g‑forces, Improved gyroscope, Ambient light sensor, LTPO OLED Always-On Retina display with Force Touch (1000 nits), Digital Crown with haptic feedback, Louder speaker, Ion-X strengthened glass, Sapphire crystal and ceramic back, Wi-Fi (802.11b/g/n 2.4GHz), Bluetooth 5.0, Built-in rechargeable lithium-ion battery, Up to 18 hours of battery life, Water resistant 50 meters, watchOS 5",
+      "id":3
+    },
+    {
+      "name": "Redmi Note 10 Pro Max",
+      "imageUrl": [
+        "https://m.media-amazon.com/images/I/8130rAC+NzL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/61Y61qfdLvL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/81wpfxGtahL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/71-YyRCKyPL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/719FK1DD9RL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/618nrK6Z2QL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/61gTwdKBl+L._SL1500_.jpg"
+      ],
+      "price": 20000,
+      "originalPrice": 25000,
+      "quantity":1,
+      "description": "Colour:Glacial Blue | Size name:128 GB 120Hz high refresh rate FHD+ 1080x2400), 6.67 inch large AMOLED Dot display with 20:9 aspect ratio and HDR 10 support ensures smooth and superior multimedia viewing experience . Qualcomm Snapdragon 732G octa-core processor with 8nm process technology coupled with latest MIUI 12 Based On Android 11) enables low power consumption for a longer battery life and immersive user experience as well as great performance. Flagship 108MP Quad camera setup facilitates user to capture high resolution photographs with greater detail in almost all lighting conditions as well as scenarios. Comes with support for Ultra wide, Macro and Portrait with several modes in the camera app which enhances the photography experience. Massive 5020 mAh battery bundled with 33W fast charger in-box boosts the charging speed as well as provides great battery backup Note:Incase of any issue with the product, kindly contact brand at 1800 103 6286 between Service hours: 09:00-21:00.",
+      "id":4
+    },
+    {
+      "name": "HP 15 10th Gen Intel Core i3 Laptop",
+      "imageUrl": [
+        "https://m.media-amazon.com/images/I/81Ne5qKmE8L._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/81SiSWbS4pL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/71PMO2lYJTL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/91zuy8GwD5L._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/71VdLwPpfLL._SL1500_.jpg"
+      ],
+      "price": 50000,
+      "originalPrice": 60000,
+      "quantity":1,
+      "description": "Stay connected to what matters most with long-lasting battery life and a thin and portable, micro-edge bezel design. Built to keep you productive and entertained from anywhere, the HP 15 diagonal laptop features reliable performance and an expansive display - letting you stream surf and speed through tasks.",
+      "id":4
+    },
+    {
+      "name": "PlayStation 4 1TB",
+      "imageUrl": [
+        "https://m.media-amazon.com/images/I/61gLO71Zu0L._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/51Ki4WQUHjS.jpg",
+        "https://m.media-amazon.com/images/I/71t4O4i7oBL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/71+A7WnJDWL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/711dlZ4TOsL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/9177piCL7KL._SL1500_.jpg"
+      ],
+      "price": 30000,
+      "originalPrice": 35000,
+      "quantity":1,
+      "description": "The slimmer, lighter PS4, the console - packing in awesome gaming power in 1TB versions. Available now in Jet Black.",
+      "id":5
+    }
+  ],
+  "cart": []
 }

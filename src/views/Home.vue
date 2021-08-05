@@ -5,7 +5,7 @@
 
 <script>
 import ProductCard from '@/components/ProductCard'
-import {getAllProducts} from '@/service/Product'
+import { getAllProduct } from '@/service/apiService'
 
 export default {
   name: 'Home',
@@ -15,24 +15,41 @@ export default {
   data(){
     return{
       products: [],
+       banner: [
+         {
+           url: require("@/assets/banner/banner-1.jpg"),
+           alt: "banner-1"
+         },
+         {
+           url: require("@/assets/banner/banner-2.jpg"),
+           alt: "banner-2"
+         },
+         {
+           url: require("@/assets/banner/banner-3.jpg"),
+           alt: "banner-3"
+         },
+         {
+           url: require("@/assets/banner/banner-4.jpg"),
+           alt: "banner-4"
+         }
+       ]
     }
   },
-  mounted(){
-    this.getProducts()
+  async mounted(){
+    await this.getProducts()
   },
   methods: {
     async getProducts(){
       try{
-        let response = await getAllProducts();
+        let response = await getAllProduct();
         if(response.status == 200){
-          console.log(response)
           this.products = response.data
         }
       }
       catch(error){
         console.log(error.response)
       }
-    }
+    },
   }
 }
 </script>
