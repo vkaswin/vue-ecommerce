@@ -43,6 +43,6 @@ export default {
 
 <style lang="scss" scoped>
     .main-content{
-        padding-top: 75px;
+        padding-top: 60px;
     }
 </style>
