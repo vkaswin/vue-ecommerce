@@ -1,6 +1,6 @@
 <template>
     <Header :count="cart.length" />
-    <div class="container-lg">
+    <div class="container-lg main-content">
         <slot></slot>
     </div>
     <Footer />
@@ -42,5 +42,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+    .main-content{
+        padding-top: 75px;
+    }
 </style>

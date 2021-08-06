@@ -7,7 +7,9 @@
         :autoplay="{ delay: 3000, disableOnInteraction: false }"
     >
         <SwiperSlide v-for="list in image" :key="list.alt">
-            <img :src="list.url" :alt="list.alt" class="banner">     
+            <router-link :to="{name: 'Products'}">
+                <img :src="list.url" :alt="list.alt" class="banner">  
+            </router-link>   
         </SwiperSlide>
     </Swiper>
 </template>

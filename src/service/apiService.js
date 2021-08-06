@@ -9,6 +9,15 @@ export const getAllProduct = async () => {
   return request;
 };
 
+export const searchProduct = async (params) => {
+  let request = await axios({
+    method: "get",
+    url: endpoints.SEARCH,
+    params: params,
+  });
+  return request;
+};
+
 export const getProductDetail = async (id) => {
   let request = await axios({
     method: "get",

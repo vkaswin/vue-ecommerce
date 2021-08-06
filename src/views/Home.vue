@@ -40,7 +40,6 @@ export default {
   },
   async mounted(){
     await this.getProducts()
-    await this.getCart()
   },
   methods: {
     async getProducts(){
