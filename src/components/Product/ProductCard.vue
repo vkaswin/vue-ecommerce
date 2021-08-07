@@ -1,14 +1,14 @@
 <template>
   <div class="product-card">
     <router-link :to="{name: 'ProductDetail', params: {id: product.id}}">
-    <img :src="product.imageUrl[0]" :alt="product.name" />
-    <b class="product-name">{{product.name}}</b>
-    <div class="price">
-      <span class="discount-price">{{price(product.originalPrice)}}</span>
-      <b>{{price(product.price)}}</b>
-    </div>
+      <img :src="product.imageUrl[0]" :alt="product.name" />
+      <b class="product-name">{{product.name}}</b>
+      <div class="price">
+        <span class="discount-price">{{price(product.originalPrice)}}</span>
+        <b>{{price(product.price)}}</b>
+      </div>
     </router-link>
-    <button class="add-cart" @click="$emit('addToCart',product)" :disabled="cart">{{cart ? "ADDED TO CART" : "ADD TO CART"}}</button>
+    <button class="add-cart" @click="$emit('addToCart')" :disabled="isCart">{{isCart ? "ADDED TO CART" : "ADD TO CART"}}</button>
   </div>
 </template>
 
@@ -16,7 +16,7 @@
 
 export default {
   name: 'ProductCard',
-  props: ["product","cart"],
+  props: ["product","isCart"],
   methods: {
     price(num){
       return Number(num).toLocaleString("en-In",{

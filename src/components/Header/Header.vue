@@ -8,18 +8,18 @@
                     </router-link>
                 </div>
                 <div class="col-md-6 p-0">
-                    <Search />
+                    <search />
                 </div>
                 <div class="col-md-4">
                     <div class="header-icons">
                         <div class="badge">
                             <i class="bi bi-bell"></i>
-                            <span v-if="count != 0">{{count}}</span>
+                            <!-- <span v-if="notification !== 0">{{notification}}</span> -->
                         </div>
                         <router-link :to="{name: 'Cart'}">
                             <div class="badge">
                                 <i class="bi bi-cart2"></i>
-                                <span  v-if="count != 0">{{count}}</span>
+                                <!-- <span v-if="cart.length !== 0">2</span> -->
                             </div>
                         </router-link>
                     </div>
@@ -31,18 +31,18 @@
 
 <script>
 import Search from '@/components/Header/Search'
+import { ref } from 'vue'
 
 export default {
     name: "Header",
     components: {
         Search
     },
-    props: ['count'],
-    data(){
-        return{
-            logo: require('@/assets/images/logo.png')
-        }
-    }
+    setup(){
+        let logo = ref(require('@/assets/images/logo.png'));
+
+        return { logo }
+    },
 }
 </script>
 
@@ -75,8 +75,8 @@ export default {
                 }
                 span{
                     position: absolute;
-                    top: -2px;
-                    right: 0;
+                    top: -4px;
+                    right: -8px;
                     background: #f08803;
                     color: white;
                     width: 20px;

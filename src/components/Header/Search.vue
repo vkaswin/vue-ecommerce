@@ -7,11 +7,9 @@
         <div class="overlay"  @click="toggle" v-if="isOpen && search.length !== 0"></div>
         <div class="search-dropdown" v-if="isOpen && search.length !== 0">
             <div v-if="products.length !== 0">
-                <div v-for="list in products" :key="list.id" class="search-card">
-                    <router-link :to="{name: 'ProductDetail', params:{id: list.id}}">
-                        <img :src="list.imageUrl[0]" :alt="list.name">
-                        <b>{{list.name}}</b> 
-                    </router-link>
+                <div v-for="list in products" :key="list.id" class="search-card" @click="$router.push(`/product/${list.id}`)">
+                    <img :src="list.imageUrl[0]" :alt="list.name">
+                    <b>{{list.name}}</b> 
                 </div>
             </div>
             <div class="search-not-found" v-else>

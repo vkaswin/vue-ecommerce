@@ -38,10 +38,10 @@ export const addCartProduct = async (data) => {
   return request;
 };
 
-export const updateCartProduct = async (data) => {
+export const updateCartProduct = async (id, data) => {
   let request = await axios({
     method: "put",
-    url: endpoints.CART,
+    url: `${endpoints.CART}/${id}`,
     headers: {
       "Content-Type": "application/json",
     },
