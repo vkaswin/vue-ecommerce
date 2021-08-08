@@ -75,7 +75,7 @@ export default {
             outline: none;
         }
         .search-icon{
-            background: #fbbd69;
+            background: #fbca55;
             border: none;
             width: 50px;
             height: 34px;
@@ -129,7 +129,7 @@ export default {
                 color: black;
             }
             &:hover{
-                background:#ededed;
+                background: #F0F0F0;
             }
         }
         .search-not-found{
@@ -137,6 +137,7 @@ export default {
             justify-content: center;
             align-items: center;
             padding: 20px 0px;
+            color: #0f1111;
         }
     }
 </style>

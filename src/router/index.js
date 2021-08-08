@@ -3,6 +3,9 @@ import Home from "@/views/Home.vue";
 import Cart from "@/views/Cart";
 import ProductDetail from "@/views/ProductDetail";
 import Products from "@/views/Products";
+import Address from "@/views/Address";
+import Payment from "@/views/Payment";
+import NotFound from "@/views/NotFound";
 
 const routes = [
   {
@@ -24,6 +27,21 @@ const routes = [
     path: "/product",
     name: "Products",
     component: Products,
+  },
+  {
+    path: "/address",
+    name: "Address",
+    component: Address,
+  },
+  {
+    path: "/payment",
+    name: "Payment",
+    component: Payment,
+  },
+  {
+    path: "/:catchAll(.*)",
+    name: "NotFound",
+    component: NotFound,
   },
 ];
 

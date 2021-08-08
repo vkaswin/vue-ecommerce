@@ -1,36 +1,49 @@
 <template>
   <base-layout>
-    <div class="cart-box">
-      <div class="cart-title">
-        <b>Shopping Cart</b>
-      </div>
-      <div class="row">
-        <div class="col-md-8">
-          <cart-card v-for="list in cart" :key="list.id" :product="list" @plusQty="increaseQty(list)" @minusQty="decreaseQty(list)" @removeCart="deleteCart(list.id)"/>
+    <cart-layout>
+      <div class="cart-box">
+        <div class="cart-title">
+          <b>Shopping Cart</b>
         </div>
-        <div class="col-md-4">
-          <div class="order-summary">
-            
+        <div class="row" v-if="cart.length !== 0">
+          <div class="col-md-8">
+            <cart-card v-for="list in cart" :key="list.id" :product="list" @plusQty="increaseQty(list)" @minusQty="decreaseQty(list)" @removeCart="deleteCart(list.id)"/>
+          </div>
+          <div class="col-md-4">
+            <order-summary :product="cart" />
           </div>
         </div>
+        <div class="empty-cart">
+          <img :src="emptyCart" alt="empty">
+          <router-link :to="{ name: 'Products' }">
+            <button>Continue Shopping</button>
+          </router-link>
+        </div>
       </div>
-    </div>
+    </cart-layout>
   </base-layout>
 </template>
 
 <script>
 import BaseLayout from "@/layout/BaseLayout"
 import CartCard from '@/components/Cart/CartCard'
+import CartLayout from '@/layout/CartLayout'
+import OrderSummary from '@/components/Cart/OrderSummary'
 import useCart from "@/composables/useCart"
+import { ref } from 'vue'
 
 export default {
   name: 'Cart',
   components: {
     BaseLayout,
-    CartCard
+    CartCard,
+    OrderSummary,
+    CartLayout
   },
   setup(){
-    const { cart ,updateCart, deleteCart } = useCart()
+    const { cart ,updateCart, deleteCart } = useCart();
+
+    let emptyCart = ref(require('@/assets/images/empty-cart.png'))
 
     const increaseQty = async (data) => {
       let body = {...data, quantity: data.quantity +1 }
@@ -44,7 +57,7 @@ export default {
       }
     }
 
-    return { cart ,increaseQty, decreaseQty, deleteCart }
+    return { cart ,increaseQty, decreaseQty, deleteCart, emptyCart }
   },
 
 }
@@ -58,6 +71,26 @@ export default {
       color: #0f1111;
       font-size: 24px;
       border-bottom: 1px solid #ddd;
+    }
+  }
+  .empty-cart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 40px 0px;
+    img{
+      width: 400px;
+      height: 280px;
+    }
+    button{
+      background: #fbca55;
+      border: none;
+      border-radius: 4px;
+      color: #0f1111;
+      padding: 7px 0px;
+      width: 200px;
     }
   }
 
