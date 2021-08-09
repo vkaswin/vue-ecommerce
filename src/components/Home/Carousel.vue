@@ -1,17 +1,17 @@
 <template>
-    <Swiper
+    <swiper
         :slides-per-view="1"
         :space-between="10"
         :pagination="{ clickable: true }"
         :initialSlide="0"
         :autoplay="{ delay: 3000, disableOnInteraction: false }"
     >
-        <SwiperSlide v-for="list in image" :key="list.alt">
+        <swiper-slide v-for="list in image" :key="list.alt">
             <router-link :to="{name: 'Products'}">
                 <img :src="list.url" :alt="list.alt" class="banner">  
             </router-link>   
-        </SwiperSlide>
-    </Swiper>
+        </swiper-slide>
+    </swiper>
 </template>
 
 <script>

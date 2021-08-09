@@ -4,9 +4,10 @@
       <img :src="product.imageUrl[0]" :alt="product.name" />
       <b class="product-name">{{product.name}}</b>
       <div class="price">
-        <span class="discount-price">{{price(product.originalPrice)}}</span>
-        <b>{{price(product.price)}}</b>
+        <span class="discount-price">{{ originalPrice }}</span>
+        <b>{{ price }}</b>
       </div>
+      <span class="discount-tag">{{ discountPercent }}% OFF</span>
     </router-link>
     <button class="add-cart" @click="$emit('addToCart')" :disabled="isCart">{{isCart ? "ADDED TO CART" : "ADD TO CART"}}</button>
   </div>
@@ -17,20 +18,32 @@
 export default {
   name: 'ProductCard',
   props: ["product","isCart"],
-  methods: {
-    price(num){
-      return Number(num).toLocaleString("en-In",{
+  computed: {
+    price(){
+      return Number(this.$props.product.price).toLocaleString("en-In",{
         maximumFractionDigits: 2,
         style: "currency",
         currency: "INR",
       })
     },
+    originalPrice(){
+      return Number(this.$props.product.originalPrice).toLocaleString("en-In",{
+        maximumFractionDigits: 2,
+        style: "currency",
+        currency: "INR",
+      })
+    },
+    discountPercent(){
+      const { originalPrice, price } = this.$props.product;
+      return Number(((originalPrice - price ) / originalPrice) * 100).toFixed(0)
+    }
   },
 }
 </script>
 
 <style lang="scss" scoped>
 .product-card{
+  position: relative;
   width: 100%;
   height: 380px;
   border: 1px solid #ccc;
@@ -74,6 +87,17 @@ export default {
     width: 100%;
     color: white;
     font-weight: bold;
+  }
+  .discount-tag{
+    background: #84be52;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 10px;
+    padding: 2px 5px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
   }
   
 }

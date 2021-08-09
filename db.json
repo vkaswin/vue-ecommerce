@@ -173,5 +173,38 @@
       "id": 5
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "name": "Apple Watch SE",
+      "imageUrl": [
+        "https://m.media-amazon.com/images/I/71bUKrOPzYL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/81VWaPJYLeL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/81sbcUCpaSL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/81JtJg-nSPL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/813nJtL95YL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/71IC4cSI43L._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/718qNzj4k8L._SL1500_.jpg"
+      ],
+      "price": 25000,
+      "originalPrice": 30000,
+      "quantity": 1,
+      "description": "LTE and UMTS, Built-in GPS, GLONASS, Galileo, and QZSS, S5 with 64-bit dual-core processor, W3 Apple wireless chip, Barometric altimeter, Capacity 32GB, Optical heart sensor, Electrical heart sensor, Improved accelerometer up to 32 g‑forces, Improved gyroscope, Ambient light sensor, LTPO OLED Always-On Retina display with Force Touch (1000 nits), Digital Crown with haptic feedback, Louder speaker, Ion-X strengthened glass, Sapphire crystal and ceramic back, Wi-Fi (802.11b/g/n 2.4GHz), Bluetooth 5.0, Built-in rechargeable lithium-ion battery, Up to 18 hours of battery life, Water resistant 50 meters, watchOS 5",
+      "id": 3
+    },
+    {
+      "name": "OnePlus 9R 5G",
+      "imageUrl": [
+        "https://m.media-amazon.com/images/I/61IwksZ-DGL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/6118bCOA0rL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/61Q5U3dzCKL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/612rhTtaalL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/61g+kcuvV-L._SL1500_.jpg"
+      ],
+      "price": 45000,
+      "originalPrice": 50000,
+      "quantity": 2,
+      "description": "The All New OnePlus 9 R, Level Up - the New onePlus 9R comes with Qualcomm Snapdragon 870 5G with upgraded Qualcomm Kryo 585 CPU that performs intense mobile computing at up to 3.2 GHz and also comes with an ultra-fast Qualcomm Adreno 650 GPU for superb on-device experiences. The Device is loaded with a quad rear camera module that features a 48 MP Main camera, 16 MP Ultra Wide angle Camera, 5 MP Macro camera and a 2 MP Monochrome camera, it also comes with a 16 MP Front Camera. The device has a 6.55 inch Fluid AMOLED Display with 120 Hz of refresh rate and a 4500 mAh Battery with 65 W Warp Charge capability",
+      "id": 2
+    }
+  ]
 }
