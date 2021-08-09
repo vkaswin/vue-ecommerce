@@ -13,7 +13,7 @@
             <order-summary :product="cart" />
           </div>
         </div>
-        <div class="empty-cart">
+        <div class="empty-cart" v-else>
           <img :src="emptyCart" alt="empty">
           <router-link :to="{ name: 'Products' }">
             <button>Continue Shopping</button>
