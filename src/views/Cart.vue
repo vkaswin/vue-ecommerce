@@ -30,7 +30,8 @@ import CartCard from '@/components/Cart/CartCard'
 import CartLayout from '@/layout/CartLayout'
 import OrderSummary from '@/components/Cart/OrderSummary'
 import useCart from "@/composables/useCart"
-import { ref } from 'vue'
+import { ref, watchEffect } from 'vue'
+import { useStore } from 'vuex'
 
 export default {
   name: 'Cart',
@@ -41,9 +42,17 @@ export default {
     CartLayout
   },
   setup(){
-    const { cart ,updateCart, deleteCart } = useCart();
+    const { updateCart, deleteCart } = useCart();
+
+    const store = useStore()
+
+    let cart = ref([])
 
     let emptyCart = ref(require('@/assets/images/empty-cart.png'))
+    
+    watchEffect(()=>{
+      cart.value = store.state.cart.items;
+    })
 
     const increaseQty = async (data) => {
       let body = {...data, quantity: data.quantity +1 }

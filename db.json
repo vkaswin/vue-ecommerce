@@ -175,19 +175,21 @@
   ],
   "cart": [
     {
-      "name": "OnePlus 9R 5G",
+      "name": "Boat Airdopes 441",
       "imageUrl": [
-        "https://m.media-amazon.com/images/I/61IwksZ-DGL._SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/6118bCOA0rL._SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/61Q5U3dzCKL._SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/612rhTtaalL._SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/61g+kcuvV-L._SL1500_.jpg"
+        "https://m.media-amazon.com/images/I/51lEIy51L6L._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/61B2hgihcFL._SX522_.jpg",
+        "https://m.media-amazon.com/images/I/61wNhh88VmL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/81Pm0Il3JBL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/51IaG4B0JvL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/610sudaCDNL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/61t3rHj4OxL._SL1500_.jpg"
       ],
-      "price": 45000,
-      "originalPrice": 50000,
+      "price": 1799,
+      "originalPrice": 2000,
       "quantity": 1,
-      "description": "The All New OnePlus 9 R, Level Up - the New onePlus 9R comes with Qualcomm Snapdragon 870 5G with upgraded Qualcomm Kryo 585 CPU that performs intense mobile computing at up to 3.2 GHz and also comes with an ultra-fast Qualcomm Adreno 650 GPU for superb on-device experiences. The Device is loaded with a quad rear camera module that features a 48 MP Main camera, 16 MP Ultra Wide angle Camera, 5 MP Macro camera and a 2 MP Monochrome camera, it also comes with a 16 MP Front Camera. The device has a 6.55 inch Fluid AMOLED Display with 120 Hz of refresh rate and a 4500 mAh Battery with 65 W Warp Charge capability",
-      "id": 2
+      "description": "Plug Into Nirvana with boAt Airdopes 441 TWS earbuds to enjoy your music in a truly wireless way. It has the IWP (Insta Wake N’ Pair) Technology, meaning as soon as one opens the charging case lid, the earbuds power on and enter connection mode. The TWS Airdopes 441 come equipped with 6mm drivers for immersive sound. It offers a seamless user experience via its capacitive touch controls. One may hit the gym or play on any field as its secure sports fit earbuds remain intact and comfortably in place. The stereo calling feature lets the user indulge in smooth and clear chats over calls. Its latest Bluetooth v5.0 offers seamless instant connectivity. With a battery capacity of 35mAh for each earbud, indulge in blissful audio experience for up to 5 hours in a go and get an additional 25H of playback with the carry cum charge case. Also, a Type C charging port ensures that the case gets to be charged without much fuss and with ease. It is IPX7 rated to offer resistance against sweat and splash scares. One can access the instant voice assistant by just a single touch. The ergonomically designed TWS Airdopes 441 are truly dope!",
+      "id": 1
     }
   ]
 }

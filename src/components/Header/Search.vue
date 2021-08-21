@@ -20,44 +20,50 @@
 </template>
 
 <script>
+import { ref, watch } from 'vue'
 import { searchProduct } from '@/service/apiService'
 import { debounce } from 'debounce'
 
 export default {
     name: "Search",
-    data(){
-        return{
-            search: "",
-            isOpen: false,
-            products: [],
+    setup(){
+        let search = ref("")
+        
+        let isOpen = ref(false)
+
+        let products = ref([])
+
+        watch(search,debounce((value)=>{
+            getSearchProduct({q: value})
+        },500))
+
+        const toggle = () => {
+            isOpen.value = false
         }
-    },
-    methods: {
-        toggle(){
-            this.isOpen = false
-        },
-        handleFocus(){
-            this.isOpen = true
-        },
-        async getSearchProduct(){
-            let params = {
-                q: this.search
-            }
+
+        const handleFocus = () => {
+            isOpen.value = true
+        }
+
+        const getSearchProduct = async (params) => {
             try{
                 let response = await searchProduct(params)
                 if(response.status == 200){
-                    this.products = response.data
+                    products.value = response.data
                 }
             }
             catch(error){
                 console.log(error.response)
             }
         }
-    },
-    watch: {
-        search: debounce(function(){
-            this.getSearchProduct()
-        },500)
+
+        return{
+            search,
+            isOpen,
+            products,
+            toggle,
+            handleFocus
+        }
     },
 }
 </script>

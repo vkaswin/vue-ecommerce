@@ -1,7 +1,7 @@
 <template>
   <base-layout>
     <div class="product-container">
-      <product-card v-for="list in products" :key="list.name" :product='list' :isCart="isCart(list.id)" @addToCart="addCart(list)"  />
+      <product-card v-for="list in products" :key="list.name" :product='list' @addToCart="addCart(list)"  />
     </div>
   </base-layout>
 </template>
@@ -11,7 +11,7 @@ import ProductCard from '@/components/Product/ProductCard'
 import BaseLayout from '@/layout/BaseLayout'
 import { getAllProduct } from '@/service/apiService'
 import useCart from "@/composables/useCart"
-import { onMounted, ref } from 'vue'
+import { ref } from 'vue'
 
 export default {
   name: 'Products',
@@ -19,14 +19,13 @@ export default {
     ProductCard,
     BaseLayout
   },
+  mounted(){
+    this.getProducts()
+  },
   setup(){
     let products = ref([])
 
-    const { cart, addCart } = useCart();
-
-    onMounted(()=>{
-      getProducts()
-    })
+    const { addCart } = useCart();
 
     const getProducts = async () => {
       try{
@@ -40,12 +39,7 @@ export default {
       }
     }
 
-    return { cart, products, addCart }
-  },
-  computed: {
-    isCart(){
-      return (id) => this.cart.findIndex((list)=>list.id === id) != -1 ? true : false
-    }
+    return { products, addCart,getProducts }
   },
 }
 </script>

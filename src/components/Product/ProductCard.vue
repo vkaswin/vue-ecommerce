@@ -14,30 +14,51 @@
 </template>
 
 <script>
+import { computed } from 'vue'
+import { useStore } from 'vuex'
 
 export default {
   name: 'ProductCard',
   props: ["product","isCart"],
-  computed: {
-    price(){
-      return Number(this.$props.product.price).toLocaleString("en-In",{
-        maximumFractionDigits: 2,
-        style: "currency",
-        currency: "INR",
-      })
-    },
-    originalPrice(){
-      return Number(this.$props.product.originalPrice).toLocaleString("en-In",{
-        maximumFractionDigits: 2,
-        style: "currency",
-        currency: "INR",
-      })
-    },
-    discountPercent(){
-      const { originalPrice, price } = this.$props.product;
+  setup({ product }){
+    const store = useStore()
+
+    const price = computed(()=>{
+      return priceConversion(product.price);
+    })
+
+    const originalPrice = computed(()=>{
+      return priceConversion(product.originalPrice);
+    })
+
+    const discountPercent = computed(()=>{
+      const { originalPrice, price } = product;
       return Number(((originalPrice - price ) / originalPrice) * 100).toFixed(0)
+    })
+
+    const priceConversion = (num) => {
+      return Number(num).toLocaleString("en-In",{
+        maximumFractionDigits: 2,
+        style: "currency",
+        currency: "INR",
+      })
     }
-  },
+
+    const isCart = computed(() => {
+      let isExist = store.state.cart.items.findIndex((list)=> {
+        return list.id === product.id
+      })
+      return isExist !== -1 ? true : false
+    })
+    
+    return {
+      originalPrice,
+      discountPercent,
+      price,
+      isCart
+    }
+    
+  }
 }
 </script>
 

@@ -1,4 +1,5 @@
-import { ref, onMounted } from "vue";
+import { ref } from "vue";
+import { useStore } from "vuex";
 import {
   getCartProduct,
   addCartProduct,
@@ -7,17 +8,13 @@ import {
 } from "@/service/apiService";
 
 const useCart = () => {
-  let cart = ref([]);
-
-  onMounted(() => {
-    getCart();
-  });
+  const store = useStore();
 
   const getCart = async () => {
     try {
       let response = await getCartProduct();
       if (response.status == 200) {
-        cart.value = response.data;
+        store.dispatch("cartItems", response.data);
       }
     } catch (error) {
       console.log(error.response);
@@ -57,7 +54,7 @@ const useCart = () => {
     }
   };
 
-  return { cart, addCart, deleteCart, getCart, updateCart };
+  return { addCart, deleteCart, getCart, updateCart };
 };
 
 export default useCart;

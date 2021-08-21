@@ -19,7 +19,7 @@
                         <router-link :to="{name: 'Cart'}">
                             <div class="badge">
                                 <i class="bi bi-cart2"></i>
-                                <!-- <span v-if="cart.length !== 0">2</span> -->
+                                <span v-if="cart !== 0">{{ cart }}</span>
                             </div>
                         </router-link>
                     </div>
@@ -31,7 +31,9 @@
 
 <script>
 import Search from '@/components/Header/Search'
-import { ref } from 'vue'
+import { ref, onMounted, watchEffect } from 'vue'
+import { useStore } from 'vuex'
+import useCart from "@/composables/useCart"
 
 export default {
     name: "Header",
@@ -41,7 +43,21 @@ export default {
     setup(){
         let logo = ref(require('@/assets/images/logo.png'));
 
-        return { logo }
+        const { getCart } = useCart()
+
+        const store = useStore()
+
+        let cart = ref(0);
+
+        watchEffect(()=>{
+            cart.value = store.state.cart.count
+        })
+
+        onMounted(() => {
+            getCart();
+        });
+
+        return { logo, cart }
     },
 }
 </script>
