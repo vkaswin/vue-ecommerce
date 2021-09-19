@@ -1,44 +1,42 @@
 <template>
   <BaseLayout>
-      <Carousel :image="banner" />
+    <Carousel :image="banner" />
   </BaseLayout>
 </template>
 
 <script>
-import BaseLayout from '@/layout/BaseLayout'
-import Carousel from '@/components/Home/Carousel'
+import BaseLayout from "@/layout/BaseLayout";
+import Carousel from "@/components/Home/Carousel";
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
     BaseLayout,
-    Carousel
+    Carousel,
   },
-  data(){
-    return{
+  data() {
+    return {
       banner: [
-         {
-           url: require("@/assets/images/banner/banner-1.jpg"),
-           alt: "banner-1"
-         },
-         {
-           url: require("@/assets/images/banner/banner-2.jpg"),
-           alt: "banner-2"
-         },
-         {
-           url: require("@/assets/images/banner/banner-3.jpg"),
-           alt: "banner-3"
-         },
-         {
-           url: require("@/assets/images/banner/banner-4.jpg"),
-           alt: "banner-4"
-         }
-       ]
-    }
+        {
+          url: require("@/assets/images/banner/banner-1.jpg"),
+          alt: "banner-1",
+        },
+        {
+          url: require("@/assets/images/banner/banner-2.jpg"),
+          alt: "banner-2",
+        },
+        {
+          url: require("@/assets/images/banner/banner-3.jpg"),
+          alt: "banner-3",
+        },
+        {
+          url: require("@/assets/images/banner/banner-4.jpg"),
+          alt: "banner-4",
+        },
+      ],
+    };
   },
-}
+};
 </script>
 
-<style lang="scss" scoped>
-  
-</style>
+<style lang="scss" scoped></style>

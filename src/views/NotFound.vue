@@ -1,13 +1,11 @@
 <template>
-    <h1>Page Not Found</h1>
+  <h1>Page Not Found</h1>
 </template>
 
 <script>
 export default {
-    name: "NotFound"
-}
+  name: "NotFound",
+};
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

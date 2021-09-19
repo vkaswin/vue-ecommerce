@@ -1,109 +1,108 @@
 <template>
-    <header>
-        <div class="container-lg">
-            <div class="row">
-                <div class="col-md-2">
-                    <router-link :to="{name:'Home'}">
-                        <img :src="logo" alt="amazon" class="logo">
-                    </router-link>
-                </div>
-                <div class="col-md-6 p-0">
-                    <search />
-                </div>
-                <div class="col-md-4">
-                    <div class="header-icons">
-                        <div class="badge">
-                            <i class="bi bi-bell"></i>
-                            <!-- <span v-if="notification !== 0">{{notification}}</span> -->
-                        </div>
-                        <router-link :to="{name: 'Cart'}">
-                            <div class="badge">
-                                <i class="bi bi-cart2"></i>
-                                <span v-if="cart !== 0">{{ cart }}</span>
-                            </div>
-                        </router-link>
-                    </div>
-                </div>
-            </div>
+  <header>
+    <div class="container-lg">
+      <div class="row">
+        <div class="col-md-2">
+          <router-link :to="{ name: 'Home' }">
+            <img :src="logo" alt="amazon" class="logo" />
+          </router-link>
         </div>
-    </header>
+        <div class="col-md-6 p-0">
+          <search />
+        </div>
+        <div class="col-md-4">
+          <div class="header-icons">
+            <div class="badge">
+              <i class="bi bi-bell"></i>
+              <!-- <span v-if="notification !== 0">{{notification}}</span> -->
+            </div>
+            <router-link :to="{ name: 'Cart' }">
+              <div class="badge">
+                <i class="bi bi-cart2"></i>
+                <span v-if="cart !== 0">{{ cart }}</span>
+              </div>
+            </router-link>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 </template>
 
 <script>
-import Search from '@/components/Header/Search'
-import { ref, onMounted, watchEffect } from 'vue'
-import { useStore } from 'vuex'
-import useCart from "@/composables/useCart"
+import Search from "@/components/Header/Search";
+import { ref, onMounted, watchEffect } from "vue";
+import { useStore } from "vuex";
+import useCart from "@/composables/useCart";
 
 export default {
-    name: "Header",
-    components: {
-        Search
-    },
-    setup(){
-        let logo = ref(require('@/assets/images/logo.png'));
+  name: "Header",
+  components: {
+    Search,
+  },
+  setup() {
+    let logo = ref(require("@/assets/images/logo.png"));
 
-        const { getCart } = useCart()
+    const { getCart } = useCart();
 
-        const store = useStore()
+    const store = useStore();
 
-        let cart = ref(0);
+    let cart = ref(0);
 
-        watchEffect(()=>{
-            cart.value = store.state.cart.count
-        })
+    watchEffect(() => {
+      cart.value = store.state.cart.count;
+    });
 
-        onMounted(() => {
-            getCart();
-        });
+    onMounted(() => {
+      getCart();
+    });
 
-        return { logo, cart }
-    },
-}
+    return { logo, cart };
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-    header{
-        position: fixed;
-        top: 0;
-        left: 0;
-        background: #131921;
-        width: 100%;
-        height: 50px;
-        padding: 30px 0px;
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #131921;
+  width: 100%;
+  height: 50px;
+  padding: 30px 0px;
+  display: flex;
+  align-items: center;
+  z-index: 3;
+  .logo {
+    width: 100px;
+    height: 30px;
+  }
+  .header-icons {
+    display: flex;
+    gap: 15px;
+    .badge {
+      position: relative;
+      width: 30px;
+      cursor: pointer;
+      i {
+        color: white;
+        font-size: 24px;
+      }
+      span {
+        position: absolute;
+        top: -4px;
+        right: -8px;
+        background: #f08803;
+        color: white;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
         display: flex;
         align-items: center;
-        z-index: 3;
-        .logo{
-            width: 100px;
-            height: 30px;
-        }
-        .header-icons{
-            display: flex;
-            gap: 15px;
-            .badge{
-                position: relative;
-                width: 30px;
-                cursor: pointer;
-                i{
-                    color: white;
-                    font-size: 24px;
-                }
-                span{
-                    position: absolute;
-                    top: -4px;
-                    right: -8px;
-                    background: #f08803;
-                    color: white;
-                    width: 20px;
-                    height: 20px;
-                    border-radius: 50%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                }
-            }
-        }
-        
+        justify-content: center;
+      }
     }
+  }
+}
 </style>
